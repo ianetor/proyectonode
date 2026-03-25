@@ -36,5 +36,16 @@
     <form action="/orderbynombre" method="get">
         <button type="submit">Ordenar por nombre</button>
     </form>
-</body>
+    <button onClick="cargarPerro()">API externa</button>
+    <img id="imagenPerro" width="300"/>
+    <script>
+    function cargarPerro() {
+      fetch('http://localhost:3000/externo')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('imagenPerro').src = data.message;
+        });
+    }
+    </script>
+    </body>
 </html>

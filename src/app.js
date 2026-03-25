@@ -43,10 +43,9 @@ app.get('/orderbynombre', (req, res) => {
     res.json(ordenados);
 });
 
-const fetch = require('node-fetch');
 app.get('/externo', async (req, res) => {
     try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+        const response = await fetch('https://dog.ceo/api/breeds/image/random');
         const data = await response.json();
         res.json(data);
     } catch (error) {
