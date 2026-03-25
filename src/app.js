@@ -8,44 +8,42 @@ const app = express();
 app.use(cors());
 app.use(express.static(path.join(__dirname, '../frontend')));
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/index.html'));
-});
-
-app.get('/productos', (req, res) => {
+app.get('/api/productos', (req, res) => {
     res.json(productos);
 });
 
-app.get('/buscarporId/:id', (req, res) => {
-    const productoId = parseInt(req.query.id);
+app.get('/api/buscarporId/:id', (req, res) => {
+    const productoId = parseInt(req.params.id);
     const producto = productos.find(p => p.id === productoId); 
     if (producto) {
         res.json(producto);
     } else {   
-        res.status(404).json({ error: 'Producto no encontrado' });
+        res.status(404).json({ error: `Producto con id ${productoId} no existe` });
     }
 });
 
-app.get('/filtrarXprecioMax', (req, res) => {
+app.get('/api/filtrarXprecioMax', (req, res) => {
     const precio = parseFloat(req.query.precio);
     const filtrados = productos.filter(p => p.precio <= precio);
     res.json(filtrados);
 });
 
-app.get('/filtrarXprecioMin', (req, res) => {
+app.get('/api/filtrarXprecioMin', (req, res) => {
     const precio = parseFloat(req.query.precio);
     const filtrados = productos.filter(p => p.precio >= precio);
     res.json(filtrados);
 });
 
-app.get('/orderbynombre', (req, res) => {
-    const ordenados = productos.sort((a, b) => a.nombre.localeCompare(b.nombre));
+app.get('/api/orderbynombre', (req, res) => {
+    const ordenados = [...productos].sort((a, b) => a.nombre.localeCompare(b.nombre));
     res.json(ordenados);
 });
 
-app.get('/externo', async (req, res) => {
+app.get('/api/externo', async (req, res) => {
     try {
-        const response = await fetch('https://dog.ceo/api/breeds/image/random');
+        const response = await fetch('https://dog.ceo/api/breeds/image/random',{
+            method: 'GET',
+        });
         const data = await response.json();
         res.json(data);
     } catch (error) {
