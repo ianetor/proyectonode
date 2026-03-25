@@ -1,0 +1,12 @@
+[
+    {"id": 1, "nombre": "fProducto 1", "precio": 10.99, "descripcion": "Descripción del producto 1"},
+    {"id": 2, "nombre": "gProducto 2", "precio": 19.99, "descripcion": "Descripción del producto 2"},
+    {"id": 3, "nombre": "hProducto 3", "precio": 5.99, "descripcion": "Descripción del producto 3"},
+    {"id": 4, "nombre": "bProducto 4", "precio": 15.00, "descripcion": "Descripción del producto 4"},
+    {"id": 5, "nombre": "aProducto 5", "precio": 25.50, "descripcion": "Descripción del producto 5"},
+    {"id": 6, "nombre": "jProducto 6", "precio": 8.75, "descripcion": "Descripción del producto 6"},
+    {"id": 7, "nombre": "dProducto 7", "precio": 12.99, "descripcion": "Descripción del producto 7"},
+    {"id": 8, "nombre": "cProducto 8", "precio": 20.00, "descripcion": "Descripción del producto 8"},
+    {"id": 9, "nombre": "iProducto 9", "precio": 18.50, "descripcion": "Descripción del producto 9"},
+    {"id": 10, "nombre": "eProducto 10", "precio": 30.00, "descripcion": "Descripción del producto 10"}
+]

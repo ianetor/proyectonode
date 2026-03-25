@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Productos</title>
+</head>
+<body>
+  <h1>Lista de productos</h1>
+  <ul id="lista"></ul>
+
+  <script>
+    fetch('http://localhost:3000/productos')
+      .then(res => res.json())
+      .then(data => {
+        const lista = document.getElementById('lista');
+        data.forEach(p => {
+          const li = document.createElement('li');
+          li.textContent = p.nombre + ' - $' + p.precio;
+          lista.appendChild(li);
+        });
+      });
+  </script>
+    <search>
+        <form action="/buscarporId/:id" method="get">
+            <input type="search" name="id" placeholder="Buscar por ID de producto">
+            <button type="submit">Buscar</button>
+        </form>
+    </search>
+    <form action="/filtrarXprecioMax" method="get">
+        <input type="search" name="precio" placeholder="Ingrese precio máximo">
+        <button type="submit">Filtrar por máximo</button>
+    </form>
+    <form action="/filtrarXprecioMin" method="get">
+        <input type="search" name="precio" placeholder="Ingrese precio mínimo">
+        <button type="submit">Filtrar por mínimo</button>
+    </form>
+    <form action="/orderbynombre" method="get">
+        <button type="submit">Ordenar por nombre</button>
+    </form>
+</body>
+</html>

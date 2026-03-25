@@ -1,0 +1,10 @@
+Uso de JavaScript en un entorno Node.js
+Lectura y procesamiento de datos desde un archivo JSON
+Implementación de funciones que realicen filtrado, búsqueda y ordenamiento sobre esos datos
+Consumo de una API externa pública mediante una request HTTP
+Creación de un Web Service/API sencillo, con al menos dos endpoints que expongan información procesada
+Realizar un frontend que utilice dicha API/Web Service
+Uso de Git, compartiendo el proyecto mediante un repositorio con historial de commits
+Inclusión de un README que explique el funcionamiento y cómo ejecutar el proyecto
+Se aceptan proyectos hechos en JavaScript o TypeScript
+Pueden añadirse unit tests si el candidato lo considera pertinente
