@@ -12,7 +12,7 @@ Este proyecto implementa una API REST con Node.js y Express para consultar produ
 - Consumo de API externa (`dog.ceo`)
 - Frontend conectado al backend
 
-## Tecnologias
+## Tecnologías
 
 - Node.js
 - Express
@@ -25,7 +25,7 @@ Este proyecto implementa una API REST con Node.js y Express para consultar produ
 - Node.js 18 o superior
 - npm
 
-## Instalacion y ejecucion
+## Instalación y ejecución
 
 1. Clonar el repositorio:
 
