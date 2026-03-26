@@ -1,5 +1,5 @@
 function cargarProductos() {
-  fetch('http://localhost:3000/api/productos')
+  fetch('/api/productos')
     .then(res => res.json())
     .then(data => {
       const lista = document.getElementById('lista');
@@ -15,7 +15,7 @@ function cargarProductos() {
 
 
 function cargarPerro() {
-  fetch('http://localhost:3000/api/externo')
+  fetch('/api/externo')
     .then(res => res.json())
     .then(data => {
       document.getElementById('imagenPerro').src = data.message;
@@ -24,11 +24,11 @@ function cargarPerro() {
 
 function buscarPorId() {
     const id = document.querySelector('input[name="id"]').value;
-    if (!id) {
-        alert('Por favor ingrese un ID de producto');
+    if (!id || isNaN(id)) {
+        alert('Por favor ingrese un ID de producto válido');
         return;
     }
-    fetch(`http://localhost:3000/api/buscarporId/${id}`)
+    fetch(`/api/buscarporId/${id}`)
         .then(res => res.json())
         .then(data => {
             const resultado = document.getElementById('resultado');
@@ -42,11 +42,11 @@ function buscarPorId() {
 }
 function filtrarXprecioMax() {
     const precio = document.querySelector('input[name="precioMax"]').value;
-    if (!precio) {
-        alert('Por favor ingrese un precio máximo');
+    if (!precio || isNaN(precio)) {
+        alert('Por favor ingrese un precio máximo válido');
         return;
     }
-    fetch(`http://localhost:3000/api/filtrarXprecioMax?precio=${precio}`)
+    fetch(`/api/filtrarXprecioMax?precio=${precio}`)
         .then(res => res.json())
         .then(data => {
             const lista = document.getElementById('lista');
@@ -60,11 +60,11 @@ function filtrarXprecioMax() {
 }
 function filtrarXprecioMin() {
     const precio = document.querySelector('input[name="precioMin"]').value;
-    if (!precio) {
-        alert('Por favor ingrese un precio mínimo');
+    if (!precio || isNaN(precio)) {
+        alert('Por favor ingrese un precio mínimo válido');
         return;
     }
-    fetch(`http://localhost:3000/api/filtrarXprecioMin?precio=${precio}`)
+    fetch(`/api/filtrarXprecioMin?precio=${precio}`)
         .then(res => res.json())
         .then(data => {
             const lista = document.getElementById('lista');
@@ -78,7 +78,7 @@ function filtrarXprecioMin() {
 }
 
 function ordenarPorNombre() {
-    fetch('http://localhost:3000/api/orderbynombre')
+    fetch('/api/orderbynombre')
         .then(res => res.json())
         .then(data => {
             const lista = document.getElementById('lista');
