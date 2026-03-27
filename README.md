@@ -12,18 +12,9 @@ Este proyecto implementa una API REST con Node.js y Express para consultar produ
 - Consumo de API externa (`dog.ceo`)
 - Frontend conectado al backend
 
-## Tecnologías
-
-- Node.js
-- Express
-- CORS
-- JavaScript
-- HTML, CSS y JavaScript (frontend)
-
 ## Requisitos previos
 
 - Node.js 18 o superior
-- npm
 
 ## Instalación y ejecución
 
@@ -49,7 +40,7 @@ node src/app.js
 4. Abrir en el navegador:
 
 - Frontend: `http://localhost:3000`
-- API base: `http://localhost:3000/api`
+- Base URL: `http://localhost:3000/api`
 
 ## Endpoints
 
@@ -70,22 +61,6 @@ GET /api/orderbynombre
 
 GET /api/externo  
 → Devuelve datos desde una API externa (imagen de perro)
-
-## Estructura del proyecto
-
-```text
-ProyectoLibre/
-|-- data/
-|   `-- productos.json
-|-- frontend/
-|   |-- index.html
-|   |-- script.js
-|   `-- styles.css
-|-- src/
-|   `-- app.js
-|-- package.json
-`-- README.md
-```
 
 ## Autor
 

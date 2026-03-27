@@ -8,6 +8,21 @@ const app = express();
 app.use(cors());
 app.use(express.static(path.join(__dirname, '../frontend')));
 
+app.get('/api', (req, res) => {
+  res.json({
+    message: "API de productos",
+    endpoints: [
+      "/api/productos",
+      "/api/productos/:id",
+      "/api/buscarporId/:id",
+      "/api/filtrarXprecioMax?precio=VALOR",
+      "/api/filtrarXprecioMin?precio=VALOR",
+      "/api/orderbynombre",
+      "/api/externo"
+    ]
+  });
+});
+
 app.get('/api/productos', (req, res) => {
     res.json(productos);
 });
@@ -54,3 +69,5 @@ app.get('/api/externo', async (req, res) => {
 app.listen(3000, () => {
     console.log('Servidor escuchando en el puerto 3000');
 });
+
+module.exports = app;
