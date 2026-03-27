@@ -5,27 +5,46 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="container">
   <h1>Lista de productos</h1>
+  <div class="productos">
   <ul id="lista"></ul>
-
+  </div>
+      <div class="controls">
+      <div class="group">
       <input type="search" name="id" placeholder="Ingrese ID de producto" required>
       <button onClick="buscarPorId()">Buscar</button>
-      <div id="resultado"></div>
+      <button id="btnLimpiar" onClick="limpiarResultado()">Nueva búsqueda</button>
+      </div>
 
+      <div id="resultado"></div>
+      
+      <div class="group">
       <input type="search" name="precioMax" placeholder="Ingrese precio máximo" required>
       <button onClick="filtrarXprecioMax()">Filtrar por máximo</button>
+      </div>
 
-      <br>
+      <div class="group">
       <input type="search" name="precioMin" placeholder="Ingrese precio mínimo" required>
       <button onClick="filtrarXprecioMin()">Filtrar por mínimo</button>
+      </div>
 
-      <br>
+      <div class="group">
+      <button onClick="cargarProductos()">Borrar Filtros</button>
+      </div> 
+      
+      <div class="group">
       <button onClick="ordenarPorNombre()">Ordenar por nombre</button>
+      </div>
 
-    <br>
-    <button onClick="cargarPerro()">API externa</button>
-    <br>
-    <img id="imagenPerro" width="300"/>
+      <div class="group">
+      <button onClick="cargarPerro()">API externa</button>
+      </div>
+  </div>
+
+    <img id="imagenPerro"/>
+
     <script src="script.js"></script>
+</div>
 </body>
 </html>

@@ -33,10 +33,10 @@ function buscarPorId() {
         .then(data => {
             const resultado = document.getElementById('resultado');
             if (data.error) {
-                resultado.textContent = data.error;
+                mostrarResultado(data.error);
             }
             else {
-                resultado.textContent = data.nombre + ' - $' + data.precio;
+                mostrarResultado(data.nombre + ' - $' + data.precio);
             }
         });
 }
@@ -89,6 +89,22 @@ function ordenarPorNombre() {
                 lista.appendChild(li);
             });
         });
+}
+
+function mostrarResultado(texto) {
+  const resultado = document.getElementById("resultado");
+  const btn = document.getElementById("btnLimpiar");
+
+  resultado.textContent = texto;
+  btn.style.display = "inline-block";
+}
+
+function limpiarResultado() {
+  const resultado = document.getElementById("resultado");
+  const btn = document.getElementById("btnLimpiar");
+
+  resultado.textContent = "";
+  btn.style.display = "none";
 }
 
 cargarProductos();
