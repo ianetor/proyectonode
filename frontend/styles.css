@@ -5,6 +5,11 @@ body {
   justify-content: center;
 }
 
+#lista li {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
 ul {
   padding: 0;
   list-style: none;
@@ -18,8 +23,24 @@ input {
   min-width: 150px;
 }
 
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
 h1, h2 {
   color: #333;
+}
+
+#btnBorrar{
+  background-color: #dc3545;
+  color: white;
+  border:  1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+#btnBorrar:hover {
+  background-color: #c82333;
 }
 
 .container {
@@ -40,6 +61,14 @@ h1, h2 {
   display: none;
 }
 
+#resultado {
+  margin-top: 10px;
+  padding: 8px;
+  border-radius: 6px;
+  background-color: #e9ecef;
+  font-weight: 500;
+}
+
 .controls {
   display: flex;
   flex-direction: column;
@@ -54,7 +83,12 @@ h1, h2 {
 
 button {
   border-radius: 6px;
-  padding: 6px 10px;
+  padding: 8px 12px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 button:hover {
